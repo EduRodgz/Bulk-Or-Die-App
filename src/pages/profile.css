@@ -1,0 +1,33 @@
+
+.profile {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #556B2F;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .profile-display {
+    margin-top: 20px;
+  }
+  
+  .profile-display p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+
+@media((min-width:640px) and (max-width:1007px)){
+    .about .content{
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    }
+}

@@ -1,7 +1,7 @@
 
 import './App.css';
 import Home from './pages/home';
-import About from './pages/about';
+import Profile from './pages/profile';
 import Calorie from './pages/calorie';
 import Bulking from './pages/bulking';
 import Reference from './pages/reference';
@@ -22,7 +22,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
       </Routes>
       <Routes>
-        <Route path='/about' element={<About />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
       </Routes>
       <Routes>
         <Route path='/calorie' element={<Calorie />}></Route>

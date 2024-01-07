@@ -1,75 +1,104 @@
 import "./reference.css";
+import { useState } from "react";
 
 function Bulking() {
+
+    const [profile, setProfile] = useState({
+        name:'',
+        age:'',
+        sex:'',
+        weight:'',
+        height:'',
+        activity:'',
+    });
+
+    function handleInputChange(e){
+        const name = e.target.name;
+        const value = e.target.value;
+
+        //create copy, modify the copy, and finally set the copy back.
+        let copy = {...profile};
+        copy[name]=value;
+        setProfile(copy);
+    }
+
+    function saveProfile(){
+
+        console.log(profile);
+
+        // save to local storage
+        localStorage.setItem("profile", JSON.stringify(profile));
+    }
+
   return (
-    <div class="content page">
+    <div className="content page">
       <h1>Fill out general information about yourself!</h1>
-      <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">
+      <div className="mb-3">
+        <label htmlFor="formGroupExampleInput" className="form-label">
           Name
         </label>
-        <input
+        <input name="name" onChange={handleInputChange}
           type="text"
-          class="form-control"
+          className="form-control"
           id="formGroupExampleInput"
           placeholder="John Smith"
         ></input>
       </div>
-      <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">
+      <div className="mb-3">
+        <label htmlFor="formGroupExampleInput2" className="form-label">
           Age
         </label>
-        <input
+        <input name="age" onChange={handleInputChange}
           type="number"
-          class="form-control"
+          className="form-control"
           id="formGroupExampleInput2"
           placeholder="0-99"
         ></input>
       </div>
-      <div class="mb-3">
-        <label for="formGroupExampleInput3" class="form-label">
+      <div className="mb-3">
+        <label htmlFor="formGroupExampleInput3" className="form-label">
           Sex
         </label>
-        <select class="form-select" aria-label="Default select example">
-          <option value="1">Male</option>
-          <option value="2">Female</option>
-          <option value="3">Mental Asylum Escapee</option>
-        </select>
+        <input name="sex" onChange={handleInputChange}
+          type="text"
+          className="form-control"
+          id="formGroupExampleInput3"
+          placeholder="Type M or F"
+        ></input>
       </div>
-      <div class="mb-3">
-        <label for="formGroupExampleInput4" class="form-label">
+      <div className="mb-3">
+        <label htmlFor="formGroupExampleInput4" className="form-label">
           Weight
         </label>
-        <input
-          type="text"
-          class="form-control"
+        <input name="weight" onChange={handleInputChange}
+          type="text" 
+          className="form-control"
           id="formGroupExampleInput4"
           placeholder="lbs"
         ></input>
       </div>
-      <label for="formGroupExampleInput5" class="form-label">
+      <label htmlFor="formGroupExampleInput5" className="form-label">
         Height
       </label>
-      <input
+      <input name="height" onChange={handleInputChange}
         type="number"
-        class="form-control"
+        className="form-control"
         id="formGroupExampleInput5"
-        placeholder="height in feet.inches"
+        placeholder="height in cm"
       ></input>
-      <div class="mb-3">
-        <label for="formGroupExampleInput3" class="form-label">
-          How many times do you workout?
+      <div className="mb-3">
+        <label htmlFor="formGroupExampleInput3" className="form-label">
+          How many times a week do you workout?
         </label>
-        <select class="form-select" aria-label="Default select example">
-          <option value="1">1 a week</option>
-          <option value="2">2 a week</option>
-          <option value="3">3 a week</option>
-          <option value="4">4 a week</option>
-          <option value="5">5 a week</option>
-          <option value="6">6 a week</option>
-          <option value="7">7 a week</option>
-          <option value="8">8+ a week</option>
-        </select>
+        <input name="activity" onChange={handleInputChange}
+        type="number"
+        className="form-control"
+        id="formGroupExampleInput6"
+        placeholder="(1-7)"
+      ></input>
+      </div>
+      <div>
+        <button onClick={saveProfile} className="btn-primary">Save Profile</button>
       </div>
     </div>
   );
