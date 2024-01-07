@@ -1,0 +1,48 @@
+/* home.css */
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+
+@media (max-width: 640px){
+    .home .content{
+        padding: 20px;
+        display: block;
+    }
+
+    .home .content p{
+        text-align: center;
+    }
+    header {
+        flex-direction:column ;
+        height: max-content;
+        padding: 2%;
+    }
+}
+
+@media((min-width:640px) and (max-width:1007px)){
+    .home .content{
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    }
+}

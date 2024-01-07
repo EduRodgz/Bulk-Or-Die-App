@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Home from './pages/home';
+import About from './pages/about';
+import Calorie from './pages/calorie';
+import Bulking from './pages/bulking';
+import Reference from './pages/reference';
+import Navbar from './pages/navbar';
+import Footer from './pages/footer';
+
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div className="App">  
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+      </Routes>
+      <Routes>
+        <Route path='/about' element={<About />}></Route>
+      </Routes>
+      <Routes>
+        <Route path='/calorie' element={<Calorie />}></Route>
+      </Routes>
+      <Routes>
+        <Route path='/bulking' element={<Bulking />}></Route>
+      </Routes>
+      <Routes>
+        <Route path='/reference' element={<Reference />}></Route>
+      </Routes>
+
+      <Footer />
     </div>
+    </BrowserRouter>
   );
 }
 
