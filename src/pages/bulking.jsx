@@ -1,8 +1,11 @@
-import "./reference.css";
+import "./bulking.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Bulking() {
-
+    const navigate = useNavigate();
+    
+    
     const [profile, setProfile] = useState({
         name:'',
         age:'',
@@ -28,10 +31,11 @@ function Bulking() {
 
         // save to local storage
         localStorage.setItem("profile", JSON.stringify(profile));
+        navigate('/profile');
     }
 
   return (
-    <div className="content page">
+    <div className="content-page">
       <h1>Fill out general information about yourself!</h1>
       <div className="mb-3">
         <label htmlFor="formGroupExampleInput" className="form-label">
@@ -98,7 +102,7 @@ function Bulking() {
       ></input>
       </div>
       <div>
-        <button onClick={saveProfile} className="btn-primary">Save Profile</button>
+        <button onClick={saveProfile} className="btn-color">Save Profile</button>
       </div>
     </div>
   );

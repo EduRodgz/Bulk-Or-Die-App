@@ -1,3 +1,42 @@
+    .content-page h1 {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: inline-block;
+  }
+  
+  .content-page {
+      max-width: 400px;
+      margin: 4.4px auto;
+      padding: 20px;
+      background-color: #556B2F;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+    
+    .form-control {
+      font-size: 24px;
+      margin-bottom: 18.7px;
+    }
+
+    .btn-color {
+        background-color: #414141;
+        color: white;
+        border-radius: 5px;
+    }
+    
+  .form-label {
+    background-color: #414141;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    width: fit-content;
+  }
+  
 @media (max-width: 640px){
     .home .content{
         padding: 20px;

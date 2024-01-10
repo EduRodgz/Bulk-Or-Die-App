@@ -1,4 +1,4 @@
-.profile-display h3 {
+.profile-display h1 {
   background-color: black;
   color: white;
   padding: 5px 10px;
@@ -9,7 +9,7 @@
 
 .profile {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 4.6px auto;
     padding: 20px;
     background-color: #556B2F;
     border-radius: 8px;

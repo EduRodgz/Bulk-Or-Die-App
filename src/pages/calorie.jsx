@@ -1,85 +1,74 @@
-import "./calorie.css";
+import React, { useState, useEffect } from 'react';
+import './calorie.css';
 
 function Calorie() {
+  const [inputs, setInputs] = useState([{ food: '', calories: 0, protein: 0 }]);
+  const [totalCalories, setTotalCalories] = useState(0);
+  const [totalProtein, setTotalProtein] = useState(0);
+
+  useEffect(() => {
+    calculateTotalValues();
+  }, [inputs]);
+
+  const calculateTotalValues = () => {
+    const totalCals = inputs.reduce((sum, input) => sum + parseInt(input.calories || 0), 0);
+    const totalProt = inputs.reduce((sum, input) => sum + parseInt(input.protein || 0), 0);
+
+    setTotalCalories(totalCals);
+    setTotalProtein(totalProt);
+  };
+
+  const handleInputChange = (index, event) => {
+    const { name, value } = event.target;
+    const newInputs = [...inputs];
+    newInputs[index][name] = value;
+    setInputs(newInputs);
+  };
+
+  const handleAddInput = () => {
+    setInputs([...inputs, { food: '', calories: "", protein: "" }]);
+  };
+
+  const handleRemoveInput = (index) => {
+    const newInputs = [...inputs];
+    newInputs.splice(index, 1);
+    setInputs(newInputs);
+  };
+
   return (
     <div className="calorie page">
-      <h1>Calorie Calculator</h1>
-      <div className="input-group mb-3">
-        <span className="input-group-text" id="basic-addon1">
-          First Item
-        </span>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Username"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        ></input>
-      </div>
-
-      <div className="input-group mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        ></input>
-        <span className="input-group-text" id="basic-addon2">
-          @example.com
-        </span>
-      </div>
-
-      <div className="mb-3">
-        <label className="form-label">Your vanity URL</label>
-        <div className="input-group">
-          <span className="input-group-text" id="basic-addon3">
-            https://example.com/users/
-          </span>
+      <h1>Calorie & Protein Calculator</h1>
+      <button onClick={handleAddInput}>Add Food</button>
+      {inputs.map((input, index) => (
+        <div key={index}>
           <input
             type="text"
-            className="form-control"
-            id="basic-url"
-            aria-describedby="basic-addon3 basic-addon4"
-          ></input>
+            name="food"
+            value={input.food}
+            onChange={(e) => handleInputChange(index, e)}
+            placeholder="Food Name"
+          />
+          <input
+            type="number"
+            name="calories"
+            value={input.calories}
+            onChange={(e) => handleInputChange(index, e)}
+            placeholder="Calories"
+          />
+          <input
+            type="number"
+            name="protein"
+            value={input.protein}
+            onChange={(e) => handleInputChange(index, e)}
+            placeholder="Protein (g)"
+          />
+          <button onClick={() => handleRemoveInput(index)}>Delete</button>
         </div>
-        <div className="form-text" id="basic-addon4">
-          Example help text goes outside the input group.
-        </div>
-      </div>
-
-      <div className="input-group mb-3">
-        <span className="input-group-text">$</span>
-        <input
-          type="text"
-          className="form-control"
-          aria-label="Amount (to the nearest dollar)"
-        ></input>
-        <span className="input-group-text">.00</span>
-      </div>
-
-      <div className="input-group mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Username"
-          aria-label="Username"
-        ></input>
-        <span className="input-group-text">@</span>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Server"
-          aria-label="Server"
-        ></input>
-      </div>
-
-      <div className="input-group">
-        <span className="input-group-text">With textarea</span>
-        <textarea
-          className="form-control"
-          aria-label="With textarea"
-        ></textarea>
+      ))}
+      <div>
+        <strong>Total Calories: {totalCalories}</strong>
+        <br />
+        <strong>Total Protein: {totalProtein}g</strong>
       </div>
     </div>
   );

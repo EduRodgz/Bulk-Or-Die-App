@@ -1,4 +1,18 @@
 .navbar{
     background-color: #414141;
+}
+
+.navbar a {
+    color: white;
+}
+
+.offcanvas-body{
+    background-color: #414141;
+}
+.offcanvas-header{
+    color: white;
+    background-color: #414141;
+}
+.nav-link {
     color: white;
 }

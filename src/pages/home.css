@@ -1,28 +1,25 @@
-/* home.css */
 
 .content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+  max-width: 400px;
+  margin: 4.6px auto;
+  padding: 20px;
+  background-color: #556B2F;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
   }
   
-  img {
-    max-width: 100%;
-    height: auto;
+.content h1 {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  display: inline-block;
   }
   
-  h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-  }
   
-  p {
-    font-size: 1.2em;
-    line-height: 1.6;
-  }
   
-
 @media (max-width: 640px){
     .home .content{
         padding: 20px;
