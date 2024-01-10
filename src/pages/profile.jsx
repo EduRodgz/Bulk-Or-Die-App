@@ -22,7 +22,7 @@ function calculateBulkInfo(age, sex, height, weight,) {
 function DisplayProfile({ profile }) {
     return (
       <div className="profile-display">
-        <h2>Profile Information</h2>
+        <h3>Profile Information:</h3>
         <p>Name: {profile.name}</p>
         <p>Age: {profile.age}</p>
         <p>Sex: {profile.sex}</p>
@@ -48,8 +48,8 @@ function DisplayProfile({ profile }) {
       if (age && sex && height && weight && activity) {
         const { caloriesNeeded, proteinNeeded } = calculateBulkInfo(age, sex, height, weight, activity);
         return (
-          <div>
-            <h3>Calories/Protein needed a day to bulk</h3>
+          <div className='profile-display'>
+            <h3>Calories/Protein needed a day to bulk:</h3>
             <p>Calories Needed: {caloriesNeeded} kcal</p>
             <p>Protein Needed: {proteinNeeded} grams</p>
           </div>
@@ -61,7 +61,6 @@ function DisplayProfile({ profile }) {
   
     return (
       <div className='profile page'>
-        <h2>Profile</h2>
         {profile ? <DisplayProfile profile={profile} /> : <p>No profile data found. Go to /Bulking to create profile!</p>}
         {displayBulkInfo()}
       </div>

@@ -2,7 +2,7 @@ import './navbar.css';
 
 function Navbar(){
     return(
-        <nav className="navbar bg-body-tertiary sticky-top">
+        <nav className="navbar sticky-top">
   <div className="container-fluid">
     <a className="navbar-brand" href="/">Bulk or Die</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@ function Navbar(){
             <a className="nav-link active"  href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link active"  href="/about">Profile</a>
+            <a className="nav-link active"  href="/profile">Profile</a>
           </li>
           <li className="nav-item">
             <a className="nav-link active" href="/calorie">Calorie Calculator</a>

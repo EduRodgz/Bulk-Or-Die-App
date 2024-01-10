@@ -1,0 +1,23 @@
+@media (max-width: 640px){
+    .home .content{
+        padding: 20px;
+        display: block;
+    }
+
+    .home .content p{
+        text-align: center;
+    }
+    header {
+        flex-direction:column ;
+        height: max-content;
+        padding: 2%;
+    }
+}
+
+@media((min-width:640px) and (max-width:1007px)){
+    .home .content{
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    }
+}
