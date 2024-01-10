@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './calorie.css';
 
 function Calorie() {
-  const [inputs, setInputs] = useState([{ food: '', calories: 0, protein: 0 }]);
+  const [inputs, setInputs] = useState([{ food: '', calories: "", protein: "" }]);
   const [totalCalories, setTotalCalories] = useState(0);
   const [totalProtein, setTotalProtein] = useState(0);
 
