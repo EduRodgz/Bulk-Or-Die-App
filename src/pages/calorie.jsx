@@ -38,7 +38,7 @@ function Calorie() {
   return (
     <div className="calorie page">
       <h1>Calorie & Protein Calculator</h1>
-      <button onClick={handleAddInput}>Add Food</button>
+      <div className='calorie-page-output'>
       {inputs.map((input, index) => (
         <div key={index}>
           <input
@@ -62,7 +62,10 @@ function Calorie() {
             onChange={(e) => handleInputChange(index, e)}
             placeholder="Protein (g)"
           />
+          <div>
+          <button onClick={handleAddInput}>Add Food</button>
           <button onClick={() => handleRemoveInput(index)}>Delete</button>
+          </div>
         </div>
       ))}
       <div>
@@ -70,6 +73,7 @@ function Calorie() {
         <br />
         <strong>Total Protein: {totalProtein}g</strong>
       </div>
+    </div>
     </div>
   );
 }

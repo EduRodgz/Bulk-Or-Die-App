@@ -1,12 +1,19 @@
+.calorie-page-output{
+    background-color:#414141;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
 
 button {
-    background-color: #414141;
+        background-color: #414141;
         color: white;
-        border-radius: 5px;
+        border-radius: 8px;
+        padding: 2px;
     }
 
 button:hover {
-    background-color: #405d27;
+    background-color: black;
     }
 
 .calorie{
@@ -16,7 +23,13 @@ button:hover {
     background-color: #556B2F;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    text-align: center;
+}
+
+.calorie input{
+    border-radius: 8px;
+    padding: 2px;
+    margin: 5px;
 }
 .calorie h1 {
     background-color: black;

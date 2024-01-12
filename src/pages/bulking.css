@@ -36,6 +36,26 @@
     margin: 5px 0;
     width: fit-content;
   }
+
+  .reference{
+      margin: 4.4px auto;
+      padding: 20px;
+      background-color: black;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+    }
+  
+    .table {
+      width: 100%;
+    }
+    
+    .table th,
+    .table td {
+      border: 1px solid #414141;
+      padding: 8px;
+      text-align: left;
+    }
   
 @media (max-width: 640px){
     .home .content{

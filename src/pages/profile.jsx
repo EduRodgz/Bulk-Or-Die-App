@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './profile.css';
-import { useLocation } from 'react-router-dom';
+
 
 
 function calculateBulkInfo(age, sex, height, weight,) {
@@ -34,7 +34,7 @@ function DisplayProfile({ profile }) {
   }
 
   function Profile() {
-    const location = useLocation();
+    
     const [profile, setProfile] = useState({});
   
     useEffect(() => {

@@ -1,5 +1,7 @@
 import "./navbar.css";
 
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav className="navbar sticky-top" data-bs-theme="dark">
@@ -36,29 +38,29 @@ function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <a className="nav-link active" href="/">
+                <Link className="nav-link active" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="/profile">
+                <Link className="nav-link active" to="/profile">
                   Profile
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="/calorie">
+                <Link className="nav-link active" to="/calorie">
                   Calorie Calculator
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="/bulking">
+                <Link className="nav-link active" to="/bulking">
                   Bulking Calculator
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="/reference">
+                <Link className="nav-link active" to="/reference">
                   Reference
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

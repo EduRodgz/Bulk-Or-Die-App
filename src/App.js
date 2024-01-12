@@ -20,17 +20,13 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
-      </Routes>
-      <Routes>
+      
         <Route path='/profile' element={<Profile />}></Route>
-      </Routes>
-      <Routes>
+      
         <Route path='/calorie' element={<Calorie />}></Route>
-      </Routes>
-      <Routes>
+      
         <Route path='/bulking' element={<Bulking />}></Route>
-      </Routes>
-      <Routes>
+      
         <Route path='/reference' element={<Reference />}></Route>
       </Routes>
 

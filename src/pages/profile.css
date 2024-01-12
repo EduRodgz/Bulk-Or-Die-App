@@ -23,8 +23,13 @@
     text-align: center;
   }
   
-  .profile-display {
-    margin-top: 20px;
+  .profile-display h3 {
+    background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  display: inline-block;
   }
   
 .profile p {
