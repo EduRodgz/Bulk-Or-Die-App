@@ -39,8 +39,10 @@ function DisplayProfile({ profile }) {
   
     useEffect(() => {
       const savedJson = localStorage.getItem("profile");
-      const obj = JSON.parse(savedJson);
-      setProfile(obj);
+        if(savedJson){
+          const obj = JSON.parse(savedJson);
+          setProfile(obj);
+        }
     }, []);
   
     function displayBulkInfo() {
