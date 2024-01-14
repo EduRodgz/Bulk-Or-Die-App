@@ -1,9 +1,16 @@
 import "./navbar.css";
-
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const closeOffcanvas = () => {
+    const offcanvas = document.getElementById("offcanvasNavbar");
+    offcanvas.classList.remove('show');
+
+    document.getElementsByClassName("offcanvas-backdrop")[0].classList.remove('show');
+  };
+
   return (
+    
     <nav className="navbar sticky-top" data-bs-theme="dark">
       <div className="container-fluid">
         <a className="navbar-brand"  href="/">
@@ -38,28 +45,33 @@ function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <Link className="nav-link active" to="/">
+                <Link className="nav-link active" to="/" onClick={closeOffcanvas}>
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/profile">
+                <Link className="nav-link active" to="/profile" onClick={closeOffcanvas}>
                   Profile
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/calorie">
+                <Link className="nav-link active" to="/calorie" onClick={closeOffcanvas}>
                   Calorie Calculator
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/bulking">
+                <Link className="nav-link active" to="/bulking" onClick={closeOffcanvas}>
                   Bulking Calculator
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/reference">
+                <Link className="nav-link active" to="/reference" onClick={closeOffcanvas}>
                   Reference
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/links" onClick={closeOffcanvas}>
+                  Links
                 </Link>
               </li>
             </ul>

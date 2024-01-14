@@ -1,31 +1,59 @@
 import "./home.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
-const YoutubeEmbed = ({ embedId }) => (
-    <div className="video-responsive">
-      <iframe
-        width="853"
-        height="480"
-        src={`https://www.youtube.com/embed/${embedId}`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="Embedded youtube"
-      />
+function Home() {
+  return (
+    <div className="content">
+      <h1>Home</h1>
+      <p>Who we are and what we do:</p>
+      <p>
+        This is an app to help count the calories you have consumed in a day as
+        well as a calculator for establishing how many calories and grams of
+        protein you must consume to bulk!
+      </p>
+      <p>
+        In addition, we provide links to youtube videos for additional help in
+        starting a bulk for inexperienced new comers as well.
+      </p>
+      <p>
+        The top left   corner
+ will always send you back to the home page. You can also click on the links on the top right corner ↗ to be redirected anywhere on the app or click down below.
+        ↓ </p>
+      <div className="list">
+      <li >
+                <Link className="list-link"  to="/">
+                  Home
+                </Link>
+              </li>
+              <li >
+                <Link className="list-link"  to="/profile">
+                  Profile
+                </Link>
+              </li>
+              <li >
+                <Link className="list-link"  to="/calorie">
+                  Calorie Calculator
+                </Link>
+              </li>
+              <li >
+                <Link className="list-link"  to="/bulking">
+                  Bulking Calculator
+                </Link>
+              </li>
+              <li >
+                <Link className="list-link" to="/reference">
+                  Reference
+                </Link>
+              </li>
+              <li>
+                <Link className="list-link" to="/links">
+                  Links
+                </Link>
+              </li>
+      </div>
     </div>
   );
-
-function Home(){
-    return (
-            <div className="content page">
-            <h1>Home</h1>
-            <YoutubeEmbed embedId="PYVxaMyfSTc?si=jcX7N5nwVPzp6wNN" />
-            <YoutubeEmbed embedId="VoX7sR3irmI?si=-2uf2AtbmvHxr9x-" />
-            <YoutubeEmbed embedId="WepSN_Omo_w?si=dhwfB378dcwygBip" />
-            </div>
-            
-
-    );
 }
 
 export default Home;

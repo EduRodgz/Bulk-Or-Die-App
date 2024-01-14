@@ -1,0 +1,55 @@
+.links {
+    max-width: 400px;
+    margin: 5px auto;
+    padding: 20px;
+    background-color: #556B2F;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    }
+    
+.links h1 {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    }
+    .video-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+      margin: 30px;
+    }
+    
+    .video-responsive iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+@media (max-width: 640px){
+    .home .content{
+        padding: 20px;
+        display: block;
+    }
+
+    .home .content p{
+        text-align: center;
+    }
+    header {
+        flex-direction:column ;
+        height: max-content;
+        padding: 2%;
+    }
+}
+
+@media((min-width:640px) and (max-width:1007px)){
+    .home .content{
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    }
+}

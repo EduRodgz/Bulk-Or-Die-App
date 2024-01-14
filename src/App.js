@@ -5,6 +5,7 @@ import Profile from './pages/profile';
 import Calorie from './pages/calorie';
 import Bulking from './pages/bulking';
 import Reference from './pages/reference';
+import Links from './pages/links'; 
 import Navbar from './pages/navbar';
 import Footer from './pages/footer';
 
@@ -28,6 +29,8 @@ function App() {
         <Route path='/bulking' element={<Bulking />}></Route>
       
         <Route path='/reference' element={<Reference />}></Route>
+
+        <Route path='/links' element={<Links />}></Route>
       </Routes>
 
       <Footer />
