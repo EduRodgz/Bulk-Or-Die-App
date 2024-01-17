@@ -70,6 +70,11 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link active" to="/weekly" onClick={closeOffcanvas}>
+                  Weekly Bulk
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link active" to="/links" onClick={closeOffcanvas}>
                   Links
                 </Link>

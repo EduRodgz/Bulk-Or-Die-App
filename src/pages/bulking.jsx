@@ -25,7 +25,7 @@ function Bulking() {
   }
 
   function saveProfile() {
-    console.log(profile);
+   // console.log(profile);
 
     // save to local storage
     localStorage.setItem("profile", JSON.stringify(profile));

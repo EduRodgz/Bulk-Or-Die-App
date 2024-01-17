@@ -36,6 +36,7 @@ function DisplayProfile({ profile }) {
   function Profile() {
     
     const [profile, setProfile] = useState({});
+    
   
     useEffect(() => {
       const savedJson = localStorage.getItem("profile");
