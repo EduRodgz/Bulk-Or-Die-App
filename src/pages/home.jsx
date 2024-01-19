@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="content">
-      <h1>Home</h1>
+      <h1>Home☣️</h1>
       <p>Who we are and what we do:</p>
       <p>
         This is an app to help count the calories you have consumed in a day as
@@ -26,11 +26,6 @@ function Home() {
         anywhere on the app or click down below. ↓
       </p>
       <div className="list">
-        <li>
-          <Link className="list-link" to="/">
-            Home
-          </Link>
-        </li>
         <li>
           <Link className="list-link" to="/profile">
             Profile
@@ -54,6 +49,11 @@ function Home() {
         <li>
           <Link className="list-link" to="/links">
             Links
+          </Link>
+        </li>
+        <li>
+          <Link className="list-link" to="/weekly">
+            Weekly Bulk
           </Link>
         </li>
       </div>

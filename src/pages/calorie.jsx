@@ -37,7 +37,7 @@ function Calorie() {
 
   return (
     <div className="calorie page">
-      <h1>Calorie & Protein Calculator</h1>
+      <h1>Calorie & Protein Calculator🏋</h1>
       <div className='calorie-page-output'>
       {inputs.map((input, index) => (
         <div key={index}>

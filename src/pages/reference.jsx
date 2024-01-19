@@ -3,7 +3,7 @@ import "./reference.css";
 function Reference() {
   return (
     <div className="reference-page page">
-      <h1>Reference</h1>
+      <h1>Reference⌚</h1>
       <table className="table">
         <thead>
           <tr>

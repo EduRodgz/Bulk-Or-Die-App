@@ -34,7 +34,7 @@ function Bulking() {
 
   return (
     <div className="content-page">
-      <h1>Fill out general information about yourself!</h1>
+      <h1>Fill out general information about yourself!🏃‍♂️</h1>
       <div className="mb-3">
         <label htmlFor="formGroupExampleInput" className="form-label">
           Name
@@ -88,7 +88,7 @@ function Bulking() {
         ></input>
       </div>
       <label htmlFor="formGroupExampleInput5" className="form-label">
-        Height
+        Height*
       </label>
       <input
         name="height"
@@ -100,7 +100,7 @@ function Bulking() {
       ></input>
       <div className="mb-3">
         <label htmlFor="formGroupExampleInput3" className="form-label">
-          How many minutes do you workout for?
+          How many minutes do you workout for in a day?*
         </label>
         <input
           name="activity"
@@ -117,7 +117,7 @@ function Bulking() {
         </button>
       </div>
       <div className="reference">
-        <h5>Reference</h5>
+        <h5>*Reference</h5>
         <table className="table">
           <thead>
             <tr>

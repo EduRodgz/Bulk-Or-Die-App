@@ -22,7 +22,7 @@ function calculateBulkInfo(age, sex, height, weight,) {
 function DisplayProfile({ profile }) {
     return (
       <div className="profile-display">
-        <h1>Profile Summary:</h1>
+        <h1>🫂Profile Summary:</h1>
         <p>Name: {profile.name}</p>
         <p>Age: {profile.age}</p>
         <p>Sex: {profile.sex}</p>

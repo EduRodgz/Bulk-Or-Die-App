@@ -14,7 +14,7 @@ function Navbar() {
     <nav className="navbar sticky-top" data-bs-theme="dark">
       <div className="container-fluid">
         <a className="navbar-brand"  href="/">
-          Bulk or Die
+          Bulk or Die 💪
         </a>
         <button
           className="navbar-toggler"
