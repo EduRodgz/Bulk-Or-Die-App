@@ -49,7 +49,9 @@ function Weekly() {
   return (
     <div className="weekly page">
       <h1>Weekly Bulk</h1>
-
+      <div className="para">
+      <p>Use this table to keep a log of your weekly progress. You can save information to load for another day!</p>
+      </div>
       <table className="table2" width={100}>
         <thead>
           <tr>
