@@ -1,15 +1,15 @@
 import "./weekly.css";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Weekly() {
   const [data, setData] = useState({
-    Monday: { Calories: '', Protein: '' },
-    Tuesday: { Calories: '', Protein: '' },
-    Wednesday: { Calories: '', Protein: '' },
-    Thursday: { Calories: '', Protein: '' },
-    Friday: { Calories: '', Protein: '' },
-    Saturday: { Calories: '', Protein: '' },
-    Sunday: { Calories: '', Protein: '' },
+    Monday: { Calories: "", Protein: "" },
+    Tuesday: { Calories: "", Protein: "" },
+    Wednesday: { Calories: "", Protein: "" },
+    Thursday: { Calories: "", Protein: "" },
+    Friday: { Calories: "", Protein: "" },
+    Saturday: { Calories: "", Protein: "" },
+    Sunday: { Calories: "", Protein: "" },
   });
 
   const [totals, setTotals] = useState({
@@ -28,13 +28,13 @@ function Weekly() {
   };
 
   const handleSave = () => {
-    localStorage.setItem('weeklyData', JSON.stringify(data));
-    alert('Data Saved');
+    localStorage.setItem("weeklyData", JSON.stringify(data));
+    alert("Data Saved");
   };
   const handleLoad = () => {
-    const savedData = JSON.parse(localStorage.getItem('weeklyData')) || {};
+    const savedData = JSON.parse(localStorage.getItem("weeklyData")) || {};
     setData(savedData);
-    alert('Data Loading');
+    alert("Data Loading");
   };
 
   useEffect(() => {
@@ -47,50 +47,39 @@ function Weekly() {
   }, [data]);
 
   return (
-    <div className="weekly">
+    <div className="weekly page">
       <h1>Weekly Bulk</h1>
-      <p>
-        Use this calculator to maintain a log of your calories/protein for the
-        week!
-      </p>
-      <table className="table2">
+
+      <table className="table2" width={100}>
         <thead>
           <tr>
             <th scope="col">🏋️‍♂️</th>
-            <th scope="col">Monday</th>
-            <th scope="col">Tuesday</th>
-            <th scope="col">Wednesday</th>
-            <th scope="col">Thursday</th>
-            <th scope="col">Friday</th>
-            <th scope="col">Saturday</th>
-            <th scope="col">Sunday</th>
+            <th scope="col">Calories</th>
+            <th scope="col">Protein</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">Calories(kcal)</th>
-            {Object.keys(data).map((day) => (
+          {Object.keys(data).map((day) => (
+            <tr>
+              <td>{day}</td>
               <td key={`calories-${day}`}>
-                <input
-                  type="text"
+                <input className="input2"
+                  type="number"
                   value={data[day].Calories}
-                  onChange={(e) => handleChange(day, 'Calories', e.target.value)}
+                  onChange={(e) =>
+                    handleChange(day, "Calories", e.target.value)
+                  }
                 />
               </td>
-            ))}
-          </tr>
-          <tr>
-            <th scope="row">Protein(g)</th>
-            {Object.keys(data).map((day) => (
-              <td key={`protein-${day}`}>
-                <input
-                  type="text"
+              <td key={`calories-${day}`}>
+                <input className="input2"
+                  type="number"
                   value={data[day].Protein}
-                  onChange={(e) => handleChange(day, 'Protein', e.target.value)}
+                  onChange={(e) => handleChange(day, "Protein", e.target.value)}
                 />
               </td>
-            ))}
-          </tr>
+            </tr>
+          ))}
         </tbody>
       </table>
       <div className="totals">

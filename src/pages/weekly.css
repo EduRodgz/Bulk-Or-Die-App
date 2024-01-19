@@ -1,89 +1,77 @@
-.weekly h1 {
-    background-color: black;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 5px 0;
-    display: inline-block;
-  }
+
+.weekly {
+  max-width: 100%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #556B2F;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.weekly p {
+  background-color: black;
+  color: white;
+  padding: 5px 15px ;
+  border-radius: 5px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.weekly button{
+  background-color: #414141;
+        color: white;
+        border-radius: 8px;
+        padding: 2px 5px;
+        margin: 5px;
+}
+
+.weekly h1{
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  display: inline-block;
   
-  .weekly {
-    max-width: 100%;
-    margin: 50px;
-    padding-bottom: 358px;
-    border-radius: 20px;
-    background-color: #556B2F;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.input2{
+  width: 50px;
+}
+.table2 {
+  width: 100%;
+}
+
+.table2 th,
+.table2 td {
+  border: 1px solid #414141;
+  color: black;
+  background-color: white;
+  padding: 4px;
+  text-align: center;
+}
+
+@media (max-width: 390px) {
+  .weekly .table2 {
+    padding: 20px;
+    display: block;
+  }
+
+  .weekly .table2 p {
     text-align: center;
-    }
-  .weekly p {
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin: 5px;
-      font-size: 20px;
-      max-width: 670px;
-    }
-
-  .totals p {
-    background-color: black;
-      color: white;
-      text-align: center;
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin: 5px;
-      font-size: 20px;
-      max-width: 165px;
-  }
-  
-  .table2 {
-    margin: 20px auto; 
-    padding: 20px; 
-    border-collapse: collapse; 
-    width: 80%; 
-  }
-    
-    .table2 th,
-    .table2 td {
-      border: 1px solid #414141;
-      padding: 10px;
-      text-align: center;
-      background-color: white;
-    }
-
-    .buttons {
-      padding-left: 40px;
-      margin-top: 20px;
-      text-align: left;
-    }
-    
-    .buttons button {
-      margin-right: 10px; 
-      color: white;
-      
-    }
-@media (max-width: 640px){
-  .home .content{
-      padding: 20px;
-      display: block;
   }
 
-  .home .content p{
-      text-align: center;
-  }
   header {
-      flex-direction:column ;
-      height: max-content;
-      padding: 2%;
+    flex-direction: column;
+    height: max-content;
+    padding: 2%;
   }
 }
 
-@media((min-width:640px) and (max-width:1007px)){
-  .home .content{
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
+@media (min-width: 390px) and (max-width: 791px) {
+  .weekly .table2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
