@@ -47,6 +47,11 @@ function Home() {
           </Link>
         </li>
         <li>
+          <Link className="list-link" to="/recipes">
+            Recipes
+          </Link>
+        </li>
+        <li>
           <Link className="list-link" to="/links">
             Links
           </Link>

@@ -5,6 +5,7 @@ import Profile from './pages/profile';
 import Calorie from './pages/calorie';
 import Bulking from './pages/bulking';
 import Reference from './pages/reference';
+import Recipes from './pages/recipes';
 import Weekly from './pages/weekly';
 import Links from './pages/links'; 
 import Navbar from './pages/navbar';
@@ -33,6 +34,8 @@ function App() {
         <Route path='/bulking' element={<Bulking />}></Route>
       
         <Route path='/reference' element={<Reference />}></Route>
+
+        <Route path='/recipes' element={<Recipes />}></Route>
 
         <Route path='/weekly' element={<Weekly />}></Route>
 
