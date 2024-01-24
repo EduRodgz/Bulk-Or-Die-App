@@ -57,7 +57,31 @@
   width: 75%;
   box-sizing: border-box;
 }
+.recipe-input{
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: black; 
+  border-radius: 10px;
+  
+}
+.recipe-input label{
+  background-color:#556b2f;
+  color: black;
+}
 
+.form-control2{
+  display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    background-color: burlywood;
+    background-clip: padding-box;
+    border-radius: var(--bs-border-radius);
+}
 
 @media (max-width: 640px) {
   .recipes {
