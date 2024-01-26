@@ -7,6 +7,8 @@ import Bulking from './pages/bulking';
 import Reference from './pages/reference';
 import Recipes from './pages/recipes';
 import Weekly from './pages/weekly';
+import Registration from './pages/registration';
+import Login from "./pages/login";
 import Links from './pages/links'; 
 import Navbar from './pages/navbar';
 import Footer from './pages/footer';
@@ -40,6 +42,10 @@ function App() {
         <Route path='/weekly' element={<Weekly />}></Route>
 
         <Route path='/links' element={<Links />}></Route>
+
+        <Route path='/registration' element={<Registration />}></Route>
+
+        <Route path='/login' element={<Login />}></Route>
       </Routes>
 
       <Footer />

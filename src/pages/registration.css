@@ -1,0 +1,39 @@
+.registration h1 {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  display: inline-block;
+}
+
+.p5 {
+  background-color: black;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 5px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.registration button {
+  border-radius: 10px;
+  background-color: burlywood;
+  color: black;
+  font-size: 15px;
+}
+
+.registration {
+  max-width: 100%;
+  padding: 20px;
+  background-color: #556b2f;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 4.6px;
+}
+
+.registration .form-label {
+  background-color: burlywood;
+}

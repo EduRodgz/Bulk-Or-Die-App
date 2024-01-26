@@ -1,13 +1,51 @@
 import APIService from "../services/apiService";
 import "./recipes.css";
 import { defaultRecipes } from "../services/apiService";
+import { useState } from "react";
 
 function Recipes() {
+  const [recipes, setRecipes] = useState([]);
+  const [newRecipe, setNewRecipe] = useState({
+    firstName: "",
+    lastName: "",
+    description: "",
+    protein: "",
+    calories: "",
+    fat: "",
+    carbs: "",
+    link: "",
+  });
+
   async function handleClick() {
-    let service = new APIService();
-    const item = {};
-    let data = await service.saveRecipe(item);
-    console.log(data);
+    try {
+      const service = new APIService();
+      const savedRecipe = await service.saveRecipe(newRecipe);
+      console.log(savedRecipe);
+      const updatedRecipes = await service.getRecipes();
+      setRecipes(updatedRecipes);
+      setNewRecipe({
+        firstName: "",
+        lastName: "",
+        description: "",
+        protein: "",
+        calories: "",
+        fat: "",
+        carbs: "",
+        link: "",
+      });
+      window.location.reload();
+    } catch (error) {
+      console.error("Error saving recipe:", error.message);
+    }
+  }
+
+  function handleInputChange(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    setNewRecipe((prevRecipe) => ({
+      ...prevRecipe,
+      [name]: value,
+    }));
   }
 
   return (
@@ -22,7 +60,7 @@ function Recipes() {
           <div className="recipe-card">
             <h1>{r.name}</h1>
             <p>
-             {r.description}
+              {r.description}
               <p></p>
               <p>
                 <a
@@ -36,7 +74,6 @@ function Recipes() {
               </p>
             </p>
           </div>
-          
         ))}
 
         <div className="recipe-input">
@@ -45,6 +82,8 @@ function Recipes() {
               Build your own recipe!
             </label>
             <input
+              name="recipe"
+              onChange={handleInputChange}
               type="text"
               class="form-control"
               id="exampleFormControlInput1"
@@ -56,6 +95,8 @@ function Recipes() {
             <div class="row">
               <div class="col">
                 <input
+                  name="firstName"
+                  onChange={handleInputChange}
                   type="text"
                   class="form-control"
                   placeholder="First name"
@@ -64,6 +105,8 @@ function Recipes() {
               </div>
               <div class="col">
                 <input
+                  name="lastName"
+                  onChange={handleInputChange}
                   type="text"
                   class="form-control"
                   placeholder="Last name"
@@ -77,6 +120,8 @@ function Recipes() {
               Recipe Description
             </label>
             <textarea
+              name="description"
+              onChange={handleInputChange}
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
@@ -84,36 +129,39 @@ function Recipes() {
             ></textarea>
             <div class="mb-3">
               <input
-                type="text"
+                name="protein"
+                onChange={handleInputChange}
+                type="number"
                 class="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Protein(g) amount"
               ></input>
               <input
-                type="text"
+                name="calories"
+                onChange={handleInputChange}
+                type="number"
                 class="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Calories(gkcal) amount"
               ></input>
               <input
-                type="text"
+                name="fat"
+                onChange={handleInputChange}
+                type="number"
                 class="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Fat(g) amount"
               ></input>
               <input
-                type="text"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Protein(g) amount"
-              ></input>
-              <input
-                type="text"
+                name="carbs"
+                onChange={handleInputChange}
+                type="number"
                 class="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Carbs(g) amount"
               ></input>
-              <label for="formFile" class="form-label">
+              
+              <label for="formFile" class="form-label" name="link"onChange={handleInputChange}>
                 Have a recipe already typed up? Upload it here!
               </label>
               <input class="form-control" type="file" id="formFile"></input>
