@@ -79,7 +79,29 @@ class APIService {
       throw error;
     }
   }
+
+  async validateUser(credentials) {
+    try {
+      const response = await axios.get(
+        `https://fsdi.pockethost.io/api/collections/recipes_users/records?filter=(email='${credentials.email}')`
+      );
+
+      if(response.data.items && response.data.items.length > 0) {
+        return response.data.items[0].password == credentials.password;
+      }
+
+
+      return false;
+    } catch (error) {
+      console.error("Error validating user:", error);
+      throw error;
+    }
+  }
+
+
+
+  }
   
-}
+
 
 export default APIService;

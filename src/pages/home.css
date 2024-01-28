@@ -2,7 +2,8 @@
   max-width: 400px;
   margin: 11.5px auto;
   padding: 19.172px;
-  background-color: #556B2F;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -37,14 +38,14 @@
 }
 
 .list-link{
-  color:#556B2F;
+  color:white;
   background-color: black;
   text-decoration: none;
 }
 
 .list-link:hover {
-  color: black;
-  background-color: white;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
   border-radius: 3px;
 }
 

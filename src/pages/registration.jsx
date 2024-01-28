@@ -52,7 +52,7 @@ function Registration() {
         <div className="recipe-input">
           <div className="mb-3">
             <label htmlFor="exampleFormControlInput1" class="form-label">
-              Enter your username, password and email!
+              Enter a username, password and email!
             </label>
             <input
               name="username"
@@ -83,6 +83,10 @@ function Registration() {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <p>Already have account? Login below!</p>
+        <a href="/login">Login</a>
       </div>
     </div>
   );

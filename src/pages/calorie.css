@@ -13,17 +13,23 @@ button {
     }
 
 button:hover {
-    background-color: black;
+    background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     }
 
 .calorie{
     max-width: 400px;
     margin: 4.4px auto;
     padding: 20px;
-    background-color: #556B2F;
+    background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.calorie strong{
+    color: white;
 }
 
 .calorie input{

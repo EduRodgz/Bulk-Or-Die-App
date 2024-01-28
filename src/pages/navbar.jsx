@@ -13,9 +13,9 @@ function Navbar() {
     
     <nav className="navbar sticky-top" data-bs-theme="dark">
       <div className="container-fluid">
-        <a className="navbar-brand"  href="/">
+        <label className="navbar-brand">
           Bulk or Die 💪
-        </a>
+        </label>
         <button
           className="navbar-toggler"
           type="button"
@@ -45,7 +45,7 @@ function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <Link className="nav-link active" to="/" onClick={closeOffcanvas}>
+                <Link className="nav-link active" to="/home" onClick={closeOffcanvas}>
                   Home
                 </Link>
               </li>

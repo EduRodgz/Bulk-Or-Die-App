@@ -69,9 +69,9 @@ function Calorie() {
         </div>
       ))}
       <div>
-        <strong>Total Calories: {totalCalories}</strong>
+        <strong>Total Calories: {totalCalories} kcal</strong>
         <br />
-        <strong>Total Protein: {totalProtein}g</strong>
+        <strong>Total Protein: {totalProtein} g</strong>
       </div>
     </div>
     </div>

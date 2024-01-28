@@ -18,9 +18,9 @@ function Home() {
         starting a bulk for inexperienced new comers as well.
       </p>
       <p>
-        The top left corner will always send you back to the home page. You can
-        also click on the links on the top right corner ↗ to be redirected
-        anywhere on the app or click down below. ↓
+        You can
+        click on the links on the top right corner ↗ to be redirected
+        anywhere on the app or click down below. ↓ You can also register new accounts or login but may also use the app without it.
       </p>
       <div className="list">
         <li>
