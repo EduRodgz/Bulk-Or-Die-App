@@ -14,7 +14,18 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: 4.6px;
+  
 }
+
+.recipe h5{
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  display: inline-block;
+}
+
 
 .recipe h1{
   background-color: black;
@@ -28,7 +39,7 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
 .recipe p {
   background-color: black;
   color: white;
-  padding: 5px 15px ;
+  padding: 5px 20px ;
   border-radius: 5px;
   margin: 5px;
   display: inline-block;
@@ -38,6 +49,7 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  padding: 20px;
   
 }
 

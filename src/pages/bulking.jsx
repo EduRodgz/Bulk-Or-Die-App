@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Bulking() {
+  
   const navigate = useNavigate();
 
   const [profile, setProfile] = useState({

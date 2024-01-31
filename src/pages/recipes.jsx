@@ -58,7 +58,7 @@ function Recipes() {
       <div className="recipe-card-group">
         {defaultRecipes.map((r) => (
           <div className="recipe-card">
-            <h1>{r.name}</h1>
+            <h5>{r.name}</h5>
             <p>
               {r.description}
               <p></p>
@@ -69,7 +69,7 @@ function Recipes() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Ingredients
+                  Info
                 </a>
               </p>
             </p>
