@@ -2,7 +2,17 @@ import APIService from "../services/apiService";
 import "./login.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+const YoutubeEmbed = ({ embedId }) => (
+  <div className="video-responsive1">
+    <iframe
+      width="200"
+      height="200"
+      src={`https://www.youtube.com/embed/${embedId}?autoplay=1`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture ;"
+      title="Embedded youtube"
+    />
+  </div>
+);
 
 function Login() {
     const navigate = useNavigate();
@@ -40,6 +50,9 @@ function Login() {
 
   return (
     <div className="login page">
+      
+      
+    
       <h1>Login</h1>
 
       <div className="mb-3">
@@ -77,8 +90,10 @@ function Login() {
         <p>If you do not have an account you can register down below.</p>
         </div>
         <div className="space">
+          
           <a href="/registration">Register</a>
         </div>
+        <YoutubeEmbed embedId="lfppdaW24YQ" />
       </div>
     </div>
   );

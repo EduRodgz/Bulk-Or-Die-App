@@ -3,6 +3,8 @@ import "./registration.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
+
 function Registration() {
   const navigate = useNavigate();
   const [registration, setRegistration] = useState([]);
@@ -46,6 +48,7 @@ function Registration() {
 
   return (
     <div className="registration page">
+      
       <h1>Registration</h1>
       <div>
         <p className="p5">Creater a user profile!</p>
@@ -87,6 +90,7 @@ function Registration() {
       <div>
         <p>Already have account? Login below!</p>
         <a href="/">Login</a>
+        
       </div>
     </div>
   );
