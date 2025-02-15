@@ -34,12 +34,6 @@ const Home = () => {
             <Link className="list-link" to="/bulking">Bulking Calculator</Link>
           </li>
           <li>
-            <Link className="list-link" to="/reference">Reference</Link>
-          </li>
-          <li>
-            <Link className="list-link" to="/recipes">Recipes</Link>
-          </li>
-          <li>
             <Link className="list-link" to="/weekly">Weekly Bulk Plan</Link>
           </li>
         </ul>

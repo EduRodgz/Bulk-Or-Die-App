@@ -1,7 +1,7 @@
 import Home from "./pages/home";
 import Profile from "./pages/profile";
-import CalorieCalculator from "./pages/calorieCalculator";
-import BulkingCalculator from "./pages/bulkingCalculator";
+import CalorieCalculator from "./pages/calorie";
+import BulkingCalculator from "./pages/bulking";
 import Reference from "./pages/reference";
 import Recipes from "./pages/recipes";
 import WeeklyBulk from "./pages/weeklyBulk";
@@ -22,14 +22,6 @@ const routes = [
   {
     path: "/bulking",
     Component: BulkingCalculator
-  },
-  {
-    path: "/reference",
-    Component: Reference
-  },
-  {
-    path: "/recipes",
-    Component: Recipes
   },
   {
     path: "/weekly",
