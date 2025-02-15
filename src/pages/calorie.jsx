@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './calorie.css';
 
 const CalorieTracker = () => {
   const [entries, setEntries] = useState([{ food: '', calories: '', protein: '' }]);
   const [totals, setTotals] = useState({ calories: 0, protein: 0 });
 
-  
-  const updateTotals = () => {
+  const updateTotals = useCallback(() => {
     const totalCalories = entries.reduce((sum, entry) => sum + (parseInt(entry.calories, 10) || 0), 0);
     const totalProtein = entries.reduce((sum, entry) => sum + (parseInt(entry.protein, 10) || 0), 0);
-    
+
     setTotals({ calories: totalCalories, protein: totalProtein });
-  };
+  }, [entries]);
 
   useEffect(() => {
-    updateTotals();  
-  }, [entries]);  
+    updateTotals();
+  }, [entries, updateTotals]); // Now `updateTotals` is correctly added as a dependency
 
   const handleInputChange = (index, event) => {
     const { name, value } = event.target;
@@ -76,4 +75,3 @@ const CalorieTracker = () => {
 };
 
 export default CalorieTracker;
-
