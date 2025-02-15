@@ -1,3 +1,4 @@
+
 import "./links.css";
 import React from "react";
 
@@ -10,20 +11,26 @@ const YoutubeEmbed = ({ embedId }) => (
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
-      title="Embedded youtube"
+      title={`YouTube Video ${embedId}`}
     />
   </div>
 );
 
-function Links() {
+const Links = () => {
+  const videoIds = [
+    "PYVxaMyfSTc",
+    "VoX7sR3irmI",
+    "0VbV5MNZx5A",
+  ];
+
   return (
     <div className="links">
-      <h1>💯Links for beginner bulkers.</h1>
-      <YoutubeEmbed embedId="PYVxaMyfSTc?si=jcX7N5nwVPzp6wNN" />
-      <YoutubeEmbed embedId="VoX7sR3irmI?si=-2uf2AtbmvHxr9x-" />
-      <YoutubeEmbed embedId="0VbV5MNZx5A?si=syqTlHDcYZR8D9nh" />
+      <h1>💯 Links for Beginner Bulkers</h1>
+      {videoIds.map((id) => (
+        <YoutubeEmbed key={id} embedId={id} />
+      ))}
     </div>
   );
-}
+};
 
 export default Links;
