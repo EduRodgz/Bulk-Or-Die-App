@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './calorie.css';
 
@@ -6,16 +5,17 @@ const CalorieTracker = () => {
   const [entries, setEntries] = useState([{ food: '', calories: '', protein: '' }]);
   const [totals, setTotals] = useState({ calories: 0, protein: 0 });
 
-  useEffect(() => {
-    updateTotals();
-  }, [entries]);
-
+  
   const updateTotals = () => {
     const totalCalories = entries.reduce((sum, entry) => sum + (parseInt(entry.calories, 10) || 0), 0);
     const totalProtein = entries.reduce((sum, entry) => sum + (parseInt(entry.protein, 10) || 0), 0);
     
     setTotals({ calories: totalCalories, protein: totalProtein });
   };
+
+  useEffect(() => {
+    updateTotals();  
+  }, [entries]);  
 
   const handleInputChange = (index, event) => {
     const { name, value } = event.target;
@@ -76,3 +76,4 @@ const CalorieTracker = () => {
 };
 
 export default CalorieTracker;
+
