@@ -46,8 +46,8 @@
   min-height: calc(100vh - 121px);
 }*/
 :root {
-  --primary-bg: #3f5efb;
-  --secondary-bg: #fc466b;
+  --primary-bg: #000000;
+  --secondary-bg: #fdfdfd;
   --header-bg: #282c34;
   --link-color: #61dafb;
   --font-family: monospace;
