@@ -1,4 +1,4 @@
-/*import React, { useState, useEffect } from 'react';
+
 import './calorie.css';
 
 function Calorie() {
