@@ -1,21 +1,29 @@
-import "./navbar.css";
+import React from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
-function Navbar() {
-  const closeOffcanvas = () => {
+const Navbar = () => {
+  const handleCloseOffcanvas = () => {
     const offcanvas = document.getElementById("offcanvasNavbar");
-    offcanvas.classList.remove('show');
+    const backdrop = document.querySelector(".offcanvas-backdrop");
 
-    document.getElementsByClassName("offcanvas-backdrop")[0].classList.remove('show');
+    offcanvas?.classList.remove("show");
+    backdrop?.classList.remove("show");
   };
 
+  const navLinks = [
+    { to: "/home", label: "Home" },
+    { to: "/profile", label: "Profile" },
+    { to: "/calorie", label: "Calorie Calculator" },
+    { to: "/bulking", label: "Bulking Calculator" },
+    { to: "/weekly", label: "Weekly Bulk" },
+  ];
+
   return (
-    
     <nav className="navbar sticky-top" data-bs-theme="dark">
       <div className="container-fluid">
-        <label className="navbar-brand">
-          Bulk or Die 💪
-        </label>
+        <span className="navbar-brand">Bulk or Die 💪</span>
+
         <button
           className="navbar-toggler"
           type="button"
@@ -26,6 +34,7 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div
           className="offcanvas offcanvas-end"
           id="offcanvasNavbar"
@@ -42,54 +51,26 @@ function Navbar() {
               aria-label="Close"
             ></button>
           </div>
+
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className="nav-item">
-                <Link className="nav-link active" to="/home" onClick={closeOffcanvas}>
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/profile" onClick={closeOffcanvas}>
-                  Profile
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/calorie" onClick={closeOffcanvas}>
-                  Calorie Calculator
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/bulking" onClick={closeOffcanvas}>
-                  Bulking Calculator
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/reference" onClick={closeOffcanvas}>
-                  Reference
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/recipes" onClick={closeOffcanvas}>
-                  Recipes
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/weekly" onClick={closeOffcanvas}>
-                  Weekly Bulk
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/links" onClick={closeOffcanvas}>
-                  Links
-                </Link>
-              </li>
+              {navLinks.map(({ to, label }) => (
+                <li key={to} className="nav-item">
+                  <Link
+                    className="nav-link active"
+                    to={to}
+                    onClick={handleCloseOffcanvas}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

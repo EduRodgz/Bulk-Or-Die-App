@@ -1,73 +1,79 @@
-import { useEffect, useState } from 'react';
-import './profile.css';
+import { useEffect, useState } from "react";
+import "./profile.css";
 
-
-
-function calculateBulkInfo(age, sex, height, weight,) {
-    let caloriesNeeded;
-  if (sex === 'M') {
-    caloriesNeeded = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-  } else if (sex === 'F') {
-    caloriesNeeded = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+const calculateBulkInfo = (age, sex, height, weight) => {
+  if (!age || !sex || !height || !weight) {
+    return { caloriesNeeded: 0, proteinNeeded: 0 };
   }
 
-    const proteinNeeded = weight * 1.5;
-  
-    return {
-      caloriesNeeded,
-      proteinNeeded,
-    };
-  }
-  
-function DisplayProfile({ profile }) {
-    return (
-      <div className="profile-display">
-        <h1>🫂Profile Summary:</h1>
-        <p>Name: {profile.name}</p>
-        <p>Age: {profile.age}</p>
-        <p>Sex: {profile.sex}</p>
-        <p>Weight: {profile.weight}</p>
-        <p>Height: {profile.height}</p>
-        <p>Workout Frequency: {profile.activity}</p>
-      </div>
-    );
-  }
+  const caloriesNeeded =
+    sex === "M"
+      ? 10 * weight + 6.25 * height - 5 * age + 5
+      : sex === "F"
+      ? 10 * weight + 6.25 * height - 5 * age - 161
+      : 0;
 
-  function Profile() {
-    
-    const [profile, setProfile] = useState({});
-    
-  
-    useEffect(() => {
-      const savedJson = localStorage.getItem("profile");
-        if(savedJson){
-          const obj = JSON.parse(savedJson);
-          setProfile(obj);
-        }
-    }, []);
-  
-    function displayBulkInfo() {
-      const { age, sex, height, weight, activity } = profile;
-      if (age && sex && height && weight && activity) {
-        const { caloriesNeeded, proteinNeeded } = calculateBulkInfo(age, sex, height, weight, activity);
-        return (
-          <div className='profile-display'>
-            <h3>Calories/Protein needed a day to bulk:</h3>
-            <p>Calories Needed: {caloriesNeeded} kcal</p>
-            <p>Protein Needed: {proteinNeeded} grams</p>
-          </div>
-        );
-      } else {
-        return <p>Go to /Bulking if no info is displayed!</p>;
-      }
+  const proteinNeeded = weight * 1.5;
+
+  return { caloriesNeeded, proteinNeeded };
+};
+
+const DisplayProfile = ({ profile }) => (
+  <div className="profile-display">
+    <h1>🫂 Profile Summary:</h1>
+    <p>Name: {profile.name}</p>
+    <p>Age: {profile.age}</p>
+    <p>Sex: {profile.sex}</p>
+    <p>Weight: {profile.weight}</p>
+    <p>Height: {profile.height}</p>
+    <p>Workout Frequency: {profile.activity}</p>
+  </div>
+);
+
+const Profile = () => {
+  const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const savedProfile = localStorage.getItem("profile");
+    if (savedProfile) {
+      setProfile(JSON.parse(savedProfile));
     }
-  
-    return (
-      <div className='profile page'>
-        {profile ? <DisplayProfile profile={profile} /> : <p>No profile data found. Go to /Bulking to create profile!</p>}
-        {displayBulkInfo()}
-      </div>
-    );
+    setLoading(false);
+  }, []);
+
+  const displayBulkInfo = () => {
+    if (profile) {
+      const { age, sex, height, weight } = profile;
+      const { caloriesNeeded, proteinNeeded } = calculateBulkInfo(age, sex, height, weight);
+      return (
+        <div className="profile-display">
+          <h3>Calories/Protein Needed for Bulking:</h3>
+          <p>Calories Needed: {caloriesNeeded} kcal</p>
+          <p>Protein Needed: {proteinNeeded} grams</p>
+        </div>
+      );
+    } else {
+      return <p>Go to /Bulking if no info is displayed!</p>;
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
-  
-  export default Profile;
+
+  return (
+    <div className="profile page">
+      {profile ? (
+        <>
+          <DisplayProfile profile={profile} />
+          {displayBulkInfo()}
+        </>
+      ) : (
+        <p>No profile data found. Go to /Bulking to create your profile!</p>
+      )}
+    </div>
+  );
+};
+
+export default Profile;
