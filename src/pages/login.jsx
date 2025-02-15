@@ -3,17 +3,6 @@ import "./login.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const YoutubeEmbed = ({ embedId }) => (
-  <div className="video-responsive1">
-    <iframe
-      width="200"
-      height="200"
-      src={`https://www.youtube.com/embed/${embedId}?autoplay=1`}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      title={`YouTube Video ${embedId}`}
-    />
-  </div>
-);
 
 const Login = () => {
   const navigate = useNavigate();
