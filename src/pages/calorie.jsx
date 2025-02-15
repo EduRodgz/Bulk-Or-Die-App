@@ -11,11 +11,11 @@ const CalorieTracker = () => {
     const totalProtein = entries.reduce((sum, entry) => sum + (parseInt(entry.protein, 10) || 0), 0);
     
     setTotals({ calories: totalCalories, protein: totalProtein });
-  }, [entries]);
+  }, [entries]); // `entries` as dependency
 
   useEffect(() => {
     updateTotals();  
-  }, [entries, updateTotals]); // Now the effect depends on entries and the memoized updateTotals function
+  }, [entries, updateTotals]); // Add `updateTotals` as a dependency
 
   const handleInputChange = (index, event) => {
     const { name, value } = event.target;
