@@ -1,4 +1,4 @@
-import axios from "axios";
+/*import axios from "axios";
 
 export const defaultRecipes = [
   {
@@ -104,4 +104,72 @@ class APIService {
   
 
 
-export default APIService;
+export default APIService;*/
+import axios from "axios";
+import { API_BASE_URL } from "./config";
+
+class APIService {
+  constructor() {
+    this.api = axios.create({
+      baseURL: API_BASE_URL,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  handleError(error, context) {
+    console.error(`Error in ${context}:`, error);
+    throw error;
+  }
+
+  async fetchRecipes() {
+    try {
+      const response = await this.api.get("/collections/recipes/records");
+      return response.data;
+    } catch (error) {
+      this.handleError(error, "fetchRecipes");
+    }
+  }
+
+  async createRecipe(recipe) {
+    try {
+      const response = await this.api.post("/collections/recipes/records", recipe);
+      return response.data;
+    } catch (error) {
+      this.handleError(error, "createRecipe");
+    }
+  }
+
+  async fetchUsers() {
+    try {
+      const response = await this.api.get("/collections/recipes_users/records");
+      return response.data;
+    } catch (error) {
+      this.handleError(error, "fetchUsers");
+    }
+  }
+
+  async registerUser(user) {
+    try {
+      const response = await this.api.post("/collections/recipes_users/records", user);
+      return response.data;
+    } catch (error) {
+      this.handleError(error, "registerUser");
+    }
+  }
+
+  async validateUser({ email, password }) {
+    try {
+      const response = await this.api.get("/collections/recipes_users/records", {
+        params: { filter: `(email='${email}')` },
+      });
+
+      const user = response.data.items?.[0];
+
+      return user ? user.password === password : false;
+    } catch (error) {
+      this.handleError(error, "validateUser");
+    }
+  }
+}
+
+export default new APIService();

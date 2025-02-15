@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
   background: rgb(63,94,251);
   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
@@ -43,5 +43,65 @@
 }
 
 .page{
+  min-height: calc(100vh - 121px);
+}*/
+:root {
+  --primary-bg: #3f5efb;
+  --secondary-bg: #fc466b;
+  --header-bg: #282c34;
+  --link-color: #61dafb;
+  --font-family: monospace;
+}
+
+.App {
+  text-align: center;
+  background: radial-gradient(circle, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+  font-family: var(--font-family);
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-logo:hover {
+  opacity: 0.8;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-header {
+  background-color: var(--header-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem; /* More readable than calc(10px + 2vmin) */
+  color: white;
+}
+
+.App-link {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.App-link:hover {
+  color: white;
+}
+
+.page {
   min-height: calc(100vh - 121px);
 }
