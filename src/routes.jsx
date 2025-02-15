@@ -2,8 +2,6 @@ import Home from "./pages/home";
 import Profile from "./pages/profile";
 import CalorieCalculator from "./pages/calorie";
 import BulkingCalculator from "./pages/bulking";
-import Reference from "./pages/reference";
-import Recipes from "./pages/recipes";
 import WeeklyBulk from "./pages/weeklyBulk";
 
 const routes = [
