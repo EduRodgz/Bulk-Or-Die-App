@@ -5,16 +5,17 @@ const CalorieTracker = () => {
   const [entries, setEntries] = useState([{ food: '', calories: '', protein: '' }]);
   const [totals, setTotals] = useState({ calories: 0, protein: 0 });
 
+  // Memoize the updateTotals function
   const updateTotals = useCallback(() => {
     const totalCalories = entries.reduce((sum, entry) => sum + (parseInt(entry.calories, 10) || 0), 0);
     const totalProtein = entries.reduce((sum, entry) => sum + (parseInt(entry.protein, 10) || 0), 0);
-
+    
     setTotals({ calories: totalCalories, protein: totalProtein });
   }, [entries]);
 
   useEffect(() => {
-    updateTotals();
-  }, [entries, updateTotals]); // Now `updateTotals` is correctly added as a dependency
+    updateTotals();  
+  }, [entries, updateTotals]); // Now the effect depends on entries and the memoized updateTotals function
 
   const handleInputChange = (index, event) => {
     const { name, value } = event.target;
