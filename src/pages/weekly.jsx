@@ -18,7 +18,7 @@ function Weekly() {
   });
 
   const handleChange = (day, type, value) => {
-    if (isNaN(value) || value < 0) return; // Validate input to ensure it's a positive number
+    if (isNaN(value) || value < 0) return; 
     setData((prevData) => ({
       ...prevData,
       [day]: {

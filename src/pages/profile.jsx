@@ -33,19 +33,19 @@ const DisplayProfile = ({ profile }) => (
 );
 
 const Profile = () => {
-  const [profile, setProfile] = useState(null); // Holds the profile data
-  const [loading, setLoading] = useState(true); // Loading state to handle async data fetching
+  const [profile, setProfile] = useState(null); 
+  const [loading, setLoading] = useState(true); 
 
-  // Fetch profile data from localStorage when component mounts
+  
   useEffect(() => {
     const savedProfile = localStorage.getItem("profile");
     if (savedProfile) {
       setProfile(JSON.parse(savedProfile));
     }
-    setLoading(false); // Set loading to false after data is loaded
+    setLoading(false); 
   }, []);
 
-  // Display bulk info based on the profile data
+  
   const displayBulkInfo = () => {
     if (!profile) {
       return <p>Go to /Bulking if no info is displayed!</p>;
@@ -63,7 +63,7 @@ const Profile = () => {
     );
   };
 
-  // Show loading state until profile data is fetched
+  
   if (loading) {
     return <div>Loading...</div>;
   }
